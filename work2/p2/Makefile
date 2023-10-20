@@ -1,3 +1,5 @@
+debug: main
+	gdb ./main
 main : main.o calc.o
 	gcc -o main main.o calc.o
 main.o : main.c
