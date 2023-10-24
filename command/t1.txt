@@ -1,0 +1,2 @@
+hi2 -g my name2 is t1. txt
+hi my2 name2 is t1.txt

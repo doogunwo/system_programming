@@ -43,21 +43,41 @@ int main(){
     printf("행렬의 크기 입력:");
     scanf("%d %d",&matrix1_x,&matrix1_y);
 
-    int **matrix1 =(int **)malloc(matrix1_x * sizeof(int *));
+    int **matrix1 =createMatrix(matrix1_x, matrix1_y);
+    int **matrix2 =createMatrix(matrix1_x, matrix1_y);
     fillMatrix(matrix1, matrix1_x, matrix1_y);
+    fillMatrix(matrix2, matrix1_x, matrix1_y);
 
-     for (int i = 0; i < matrix1_x; i++) {
+    printf("matrix1:\n");
+    for (int i = 0; i < matrix1_x; i++) {
         for (int j = 0; j < matrix1_y; j++) {
             printf("%d ", matrix1[i][j]);
         }
         printf("\n");
     }
-    showMatrix(matrix1,matrix1_x,matrix1_y);
 
-    for (int i = 0; i < matrix1_y; i++) {
+    printf("matrix2:\n");
+    for (int i = 0; i < matrix1_x; i++) {
+        for (int j = 0; j < matrix1_y; j++) {
+            printf("%d ", matrix2[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("matrix_sum:\n");
+    for (int i = 0; i < matrix1_x; i++) {
+        for (int j = 0; j < matrix1_y; j++) {
+            printf("%d ", matrix1[i][j]+matrix2[i][j]);
+        }
+        printf("\n");
+    }
+
+    for (int i = 0; i < matrix1_x; i++) {
         free(matrix1[i]);
+        free(matrix2[i]);
     }
     free(matrix1);
+    free(matrix2);
 
     return 0;
 
