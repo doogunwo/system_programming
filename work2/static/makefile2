@@ -1,0 +1,12 @@
+main : main2.c 
+	gcc -o main2 main2.c -L./lib -ltest
+archive:
+	ar rcs ./lib/libtest.a ../sub/add.o ../sub/sub.o ../sub/div.o ../sub/mul.o
+../sub/add.o : ../sub/add.c
+	gcc -c ../sub/add.c
+../sub/sub.o : ../sub/sub.c
+	gcc -c ../sub/sub.c
+../sub/div.o : ../sub/div.c
+	gcc -c ../sub/div.c
+../sub/mul.o : ../sub/mul.c
+	gcc -c ../sub/mul.c
