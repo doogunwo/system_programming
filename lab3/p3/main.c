@@ -7,7 +7,7 @@ void ls_R(const char *path, int depth);
 
 int main(){
 
-    const char *start_dir = "..";
+    const char *start_dir = "./";
     ls_R(start_dir,0);
     return 0;
 }

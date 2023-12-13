@@ -38,6 +38,7 @@ int main() {
 
     // 메시지 큐에서 메시지 수신
     while (1) {
+        // CLIENT_MSG_TYPE 대신 SERVER_MSG_TYPE을 사용하여 메시지 수신
         if (msgrcv(msgid, (void*)&message, MAX_TEXT, CLIENT_MSG_TYPE, 0) == -1) {
             perror("msgrcv");
             exit(EXIT_FAILURE);
